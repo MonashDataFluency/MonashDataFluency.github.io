@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Events on Monash Data Fluency</title>
+    <link>https://MonashDataFluency.github.io/events/</link>
+    <description>Recent content in Events on Monash Data Fluency</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Content released under a Creative Commons Attribution 4.0 International license (CC BY 4.0).</copyright>
+    <lastBuildDate>Mon, 16 Jul 2018 11:28:03 +1100</lastBuildDate>
+    
+	<atom:link href="https://MonashDataFluency.github.io/events/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Drop-in session, 31 Aug 2018</title>
+      <link>https://MonashDataFluency.github.io/events/drop-in-session-20180831/</link>
+      <pubDate>Fri, 31 Aug 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/events/drop-in-session-20180831/</guid>
+      <description>Data Fluency Drop-In Session: Friday 31st Aug, 2pm - 4pm Guest speaker Guest speaker, Juan Nunez-Iglesias, Bio Image Analysis Research Fellow from Monash Micro Imaging will present A whirlwind introduction to image analysis in Python at our next event.
+Date and Time: Friday, August 31st at 2:00 pm in G19, 15 Innovation Walk (opposite Cinque Lire cafe), Clayton campus.
+Data Fluency Book Club Immediately after Juan&amp;rsquo;s presentation we will be hosting the Data Fluency Book Club.</description>
+    </item>
+    
+    <item>
+      <title>Events</title>
+      <link>https://MonashDataFluency.github.io/events/drop-in-session-20180622/</link>
+      <pubDate>Sat, 23 Jun 2018 11:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/events/drop-in-session-20180622/</guid>
+      <description>Data Fluency Drop-In Session: Friday 22nd Jun, 2pm - 4pm Book Club - R for Data Science (3 pm) Our &amp;ldquo;R for Data Science&amp;rdquo; book club discussion continues. Come sharpen your R skills by discussing the content with R experts in the community.
+This time we will be discussing chapter 7 of the book: Exploratory Data Analysis.
+Has your data ever surprised you with the story it told? Has visualizing changed how you subsequently analysed or modelled it?</description>
+    </item>
+    
+    <item>
+      <title>Drop-in session, 25 May 2018</title>
+      <link>https://MonashDataFluency.github.io/events/drop-in-session-20180525/</link>
+      <pubDate>Wed, 25 Apr 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/events/drop-in-session-20180525/</guid>
+      <description>Data Fluency Drop-In Session: Friday 25th May, 2pm - 4pm This month we will have a short seminar from Matthew Browne, continue the &amp;ldquo;R for Data Science&amp;rdquo; book club, as well as the usual help session.
+(Unfortunately Matthew will ill and couldn&amp;rsquo;t make it - hopefully at a later date !)
+Seminar - The Democratisation of Data Science (2 pm) Guest speaker: Matthew Browne, Data Scientist, Monash University
+Book Club - R for Data Science (3 pm) We kicked off the Data Fluency Book Club on 27 April 2018 with the aim of sharpening our R skills by reading &amp;ldquo;R for Data Science&amp;rdquo; by Garrett Grolemund and Hadley Wickham.</description>
+    </item>
+    
+    <item>
+      <title>Drop-in session, 27 Apr 2018</title>
+      <link>https://MonashDataFluency.github.io/events/drop-in-session-20180427/</link>
+      <pubDate>Wed, 25 Apr 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/events/drop-in-session-20180427/</guid>
+      <description> Data Fluency Drop-In Session: Friday 27th Apr 2018 This first drop-in session we intend to:
+ Run a quick book club discussion on the first 3 chapters of R for Data Science.
+ Work together on some coding challenges !
+ Ask for help (or provide help !) on your current programming or data analysis problems.
+  </description>
+    </item>
+    
+    <item>
+      <title>23 Mar 2018 : Launch workshop - Welcome to Data Fluency</title>
+      <link>https://MonashDataFluency.github.io/events/launch-workshop-23-mar-2018/</link>
+      <pubDate>Fri, 23 Feb 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/events/launch-workshop-23-mar-2018/</guid>
+      <description>Launch workshop Build your data fluency through ongoing skill development opportunities. Take advantage of free workshops, weekly drop-in sessions, hackathon events, technical talks, and more. Become part of our growing community of practice.
+The Data Fluency program will be launched on 23 March at 10am. Find out more about Data Fluency.
+We will running workshops at the Matheson Library, 1pm - 5pm. Make sure you register for the workshops to get a spot.</description>
+    </item>
+    
+    <item>
+      <title>Drop-in session, 27 Jul 2018</title>
+      <link>https://MonashDataFluency.github.io/events/drop-in-session-20180727/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/events/drop-in-session-20180727/</guid>
+      <description>Data Fluency Drop-In Session: Friday 27nd Jul, 2pm - 4pm Data Fluency Book Club 2:00 pm July 27th, G19, 15 Innovation Walk (opposite Cinque Lire Cafe).
+Book Club (R for Data Science) &amp;amp; Exploring OpenRefine (2 ~ 3 pm) For the Data Fluency book club for this month (2 pm, July 27th), we will be looking at Chapters 9 through to 16 of &amp;ldquo;R for Data Science&amp;rdquo;, which covers &amp;ldquo;data wrangling&amp;rdquo;: loading and tidying data, operations such as spreading, gathering and joining.</description>
+    </item>
+    
+  </channel>
+</rss>

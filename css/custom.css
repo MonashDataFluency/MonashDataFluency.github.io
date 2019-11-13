@@ -1,0 +1,23 @@
+a, u {
+    text-decoration: none;
+}
+
+main a:link {
+    color: #006DAB;
+}
+
+main a:visited {
+    color: #006DAB;
+}
+
+main a:focus {
+
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+main a:active {
+
+}

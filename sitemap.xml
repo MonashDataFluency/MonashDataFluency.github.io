@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20190625/</loc>
+    <lastmod>2019-06-24T09:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20190402-intro-to-python/</loc>
+    <lastmod>2019-04-01T09:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20190221-intro-to-python/</loc>
+    <lastmod>2019-02-17T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_r/20190218-intro-to-r/</loc>
+    <lastmod>2019-01-31T12:19:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_r/20190208-intro-to-r/</loc>
+    <lastmod>2019-01-25T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20190417/</loc>
+    <lastmod>2018-11-15T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20190605/</loc>
+    <lastmod>2018-11-15T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20190815/</loc>
+    <lastmod>2018-11-15T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20181212/</loc>
+    <lastmod>2018-11-15T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20190214/</loc>
+    <lastmod>2018-11-15T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20191115/</loc>
+    <lastmod>2018-11-15T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20191015/</loc>
+    <lastmod>2018-11-15T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20190910/</loc>
+    <lastmod>2018-11-15T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20181114-intro-to-python/</loc>
+    <lastmod>2018-11-05T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/</loc>
+    <lastmod>2018-11-05T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/events/drop-in-session-20180831/</loc>
+    <lastmod>2018-08-31T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/about/</loc>
+    <lastmod>2018-08-03T16:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/events/</loc>
+    <lastmod>2018-07-16T11:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/events/drop-in-session-20180622/</loc>
+    <lastmod>2018-06-23T11:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20180601-intro-to-python/</loc>
+    <lastmod>2018-05-29T09:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/events/20180427_challenges/</loc>
+    <lastmod>2018-04-25T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/events/drop-in-session-20180525/</loc>
+    <lastmod>2018-04-25T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/events/drop-in-session-20180427/</loc>
+    <lastmod>2018-04-25T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/</loc>
+    <lastmod>2018-04-25T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20180323-launch-workshop/intro/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20180323-launch-workshop/working_with_data/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20180323-launch-workshop/indexing/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20180323-launch-workshop/loops/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20180323-launch-workshop/plotting/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/events/launch-workshop-23-mar-2018/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/contact/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_machine_learning/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_python/20180323-launch-workshop/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_r/20180323-launch-workshop/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_r/20180531-intro-to-r/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_r/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/resources/</loc>
+    <lastmod>2018-02-06T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/categories/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/events/drop-in-session-20180727/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_command_line/20180701-commandline/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_command_line/20181214-commandline/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_command_line/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_hpc/20180803-hpc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_hpc/20181217-hpc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_hpc/20190718-hpc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_hpc/20191009-hpc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/workshops/intro_to_hpc/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/tags/no_sidebar/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://MonashDataFluency.github.io/tags/</loc>
+    <lastmod>2018-02-23T13:28:03+11:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

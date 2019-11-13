@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Monash Data Fluency  | 03 Indexing, Slicing and Subsetting</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.41" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+          integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+          crossorigin="anonymous">
+
+    <link href='https://MonashDataFluency.github.io/dist/main.css' rel='stylesheet' type="text/css" />
+    <link href='/css/custom.css' rel='stylesheet' type="text/css" />
+    
+      
+
+    
+
+    
+
+    <meta property="og:title" content="03 Indexing, Slicing and Subsetting" />
+<meta property="og:description" content="In lesson 02, we read a CSV into a Python pandas DataFrame. We learned:
+ How to save the DataFrame to a named object, How to perform basic math on the data, How to calculate summary statistics, and How to create basic plots of the data.  In this lesson, we will explore ways to access different parts of the data using:
+ Indexing, Slicing, and Subsetting  Loading our data We will continue to use the surveys dataset that we worked with in the last lesson." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://MonashDataFluency.github.io/workshops/intro_to_command_line/20180701-commandline/indexing/" />
+
+
+
+<meta property="article:published_time" content="2018-02-23T13:28:03&#43;11:00"/>
+
+<meta property="article:modified_time" content="2018-02-23T13:28:03&#43;11:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="03 Indexing, Slicing and Subsetting">
+<meta itemprop="description" content="In lesson 02, we read a CSV into a Python pandas DataFrame. We learned:
+ How to save the DataFrame to a named object, How to perform basic math on the data, How to calculate summary statistics, and How to create basic plots of the data.  In this lesson, we will explore ways to access different parts of the data using:
+ Indexing, Slicing, and Subsetting  Loading our data We will continue to use the surveys dataset that we worked with in the last lesson.">
+
+
+<meta itemprop="datePublished" content="2018-02-23T13:28:03&#43;11:00" />
+<meta itemprop="dateModified" content="2018-02-23T13:28:03&#43;11:00" />
+<meta itemprop="wordCount" content="2503">
+
+
+
+<meta itemprop="keywords" content="no_sidebar," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="03 Indexing, Slicing and Subsetting"/>
+<meta name="twitter:description" content="In lesson 02, we read a CSV into a Python pandas DataFrame. We learned:
+ How to save the DataFrame to a named object, How to perform basic math on the data, How to calculate summary statistics, and How to create basic plots of the data.  In this lesson, we will explore ways to access different parts of the data using:
+ Indexing, Slicing, and Subsetting  Loading our data We will continue to use the surveys dataset that we worked with in the last lesson."/>
+
+      
+    
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+    <div class="flex-l justify-between items-center center">
+        
+        
+        
+        <div class="f3 fw2 hover-white no-underline white-90 dib"></div>
+        <div class="flex-l items-center">
+            
+            
+            
+            
+            <ul class="pl0 mr3">
+                
+                
+                
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/" title="Home page">
+                        Home
+                    </a>
+                </li>
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/events" title="Events page">
+                        Events
+                    </a>
+                </li>
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/resources" title="Resources page">
+                        Resources
+                    </a>
+                </li>
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/contact" title="Contact page">
+                        Contact
+                    </a>
+                </li>
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/about" title="About page">
+                        About
+                    </a>
+                </li>
+                
+                
+            </ul>
+            
+            
+
+
+
+  <a href="https://twitter.com/ResDatFlu" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+
+  <a href="https://github.com/MonashDataFluency" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+  </a>
+
+
+  <a href="https://datafluency.slack.com" class="link-transition slack link dib z-999 pt3 pt0-l mr2" title="Slack link">
+    <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xml:space="preserve"
+    height="32px"  width="32px"
+   viewBox="0 0 512 512"
+   version="1.1"
+   style="enable-background:new 0 0 512 512;">
+
+    <style
+    id="style4"
+    type="text/css">
+    .st0{fill:#BABABA;}
+    </style>
+    <g transform="matrix(4.0005037,0,0,4.0005037,-291.56238,-286.76158)">
+    <g>
+        <rect
+                height="17"
+                width="17.6"
+                class="st0"
+                transform="matrix(0.9482,-0.3176,0.3176,0.9482,-36.0197,50.6366)"
+                y="127.3"
+                x="128.5"/>
+        <path
+                class="st0"
+                d="m 194.6,118.5 c -12.9,-43 -31.5,-53 -74.5,-40.1 -43,12.9 -53,31.5 -40.1,74.5 12.9,43 31.5,53 74.5,40.1 43,-12.9 53,-31.5 40.1,-74.5 z m -21.7,27.9 -8.1,2.7 2.8,8.4 c 1.1,3.4 -0.7,7.1 -4.1,8.2 -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 l -2.8,-8.4 -16.7,5.6 2.8,8.4 c 1.1,3.4 -0.7,7.1 -4.1,8.2 -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 l -2.8,-8.4 -8.1,2.7 c -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 -1.1,-3.4 0.7,-7.1 4.1,-8.2 l 8.1,-2.7 -5.4,-16.1 -8.1,2.7 c -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 -1.1,-3.4 0.7,-7.1 4.1,-8.2 l 8.1,-2.7 -2.8,-8.4 c -1.1,-3.4 0.7,-7.1 4.1,-8.2 3.4,-1.1 7.1,0.7 8.2,4.1 l 2.8,8.4 16.7,-5.6 -2.8,-8.4 c -1.1,-3.4 0.7,-7.1 4.1,-8.2 3.4,-1.1 7.1,0.7 8.2,4.1 l 2.8,8.4 8.1,-2.7 c 3.4,-1.1 7.1,0.7 8.2,4.1 1.1,3.4 -0.7,7.1 -4.1,8.2 l -8.1,2.7 5.4,16.1 8.1,-2.7 c 3.4,-1.1 7.1,0.7 8.2,4.1 1.1,3.4 -0.7,7.1 -4.1,8.2 z"
+        />
+    </g>
+    </g>
+</svg>
+
+  </a>
+
+
+        </div>
+    </div>
+</nav>
+
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          WORKSHOPS
+        </p>
+        <h1 class="f1">
+          03 Indexing, Slicing and Subsetting
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        
+
+<p>In lesson 02, we read a CSV into a Python pandas DataFrame.  We learned:</p>
+
+<ul>
+<li>How to save the DataFrame to a named object,</li>
+<li>How to perform basic math on the data,</li>
+<li>How to calculate summary statistics, and</li>
+<li>How to create basic plots of the data.</li>
+</ul>
+
+<p>In this lesson, we will explore <strong>ways to access different parts of the data</strong>
+using:</p>
+
+<ul>
+<li>Indexing,</li>
+<li>Slicing, and</li>
+<li>Subsetting</li>
+</ul>
+
+<h2 id="loading-our-data">Loading our data</h2>
+
+<p>We will continue to use the surveys dataset that we worked with in the last lesson. Let&rsquo;s reopen and read in the data again:</p>
+
+<pre><code class="language-python"># Make sure pandas is loaded
+import pandas as pd
+
+# Read in the survey CSV
+surveys_df = pd.read_csv(&quot;data/surveys.csv&quot;)
+</code></pre>
+
+<h2 id="indexing-and-slicing-in-python">Indexing and Slicing in Python</h2>
+
+<p>We often want to work with subsets of a <strong>DataFrame</strong> object. There are
+different ways to accomplish this including: using labels (column headings),
+numeric ranges, or specific x,y index locations.</p>
+
+<h2 id="selecting-data-using-labels-column-headings">Selecting data using Labels (Column Headings)</h2>
+
+<p>We use square brackets <code>[]</code> to select a subset of an Python object. For example,
+we can select all data from a column named <code>species_id</code> from the <code>surveys_df</code>
+DataFrame by name. There are two ways to do this:</p>
+
+<pre><code class="language-python"># Method 1: select a 'subset' of the data using the column name
+surveys_df['species_id'].head()
+
+# Method 2: use the column name as an 'attribute'; gives the same output
+surveys_df.species_id.head()
+</code></pre>
+
+<p>We can also create a new object that contains only the data within the
+<code>species_id</code> column as follows:</p>
+
+<pre><code class="language-python"># Creates an object, surveys_species, that only contains the `species_id` column
+surveys_species = surveys_df['species_id']
+</code></pre>
+
+<p>We can pass a list of column names too, as an index to select columns in that
+order. This is useful when we need to reorganize our data.</p>
+
+<p><strong>NOTE:</strong> If a column name is not contained in the DataFrame, an exception
+(error) will be raised.</p>
+
+<pre><code class="language-python"># Select the species and plot columns from the DataFrame
+surveys_df[['species_id', 'plot_id']].head()
+
+# What happens when you flip the order?
+surveys_df[['plot_id', 'species_id']].head()
+
+# What happens if you ask for a column that doesn't exist?
+surveys_df['speciess']
+</code></pre>
+
+<p>Python tells us what type of error it is in the traceback, at the bottom it says <code>KeyError: 'speciess'</code> which means that <code>speciess</code> is not a column name (or Key in the related python data type dictionary).</p>
+
+<h2 id="extracting-range-based-subsets-slicing">Extracting Range based Subsets: Slicing</h2>
+
+<p><strong>REMINDER</strong>: Python Uses 0-based Indexing</p>
+
+<p>Let&rsquo;s remind ourselves that Python uses 0-based
+indexing. This means that the first element in an object is located at position
+0. This is different from other tools like R and Matlab that index elements
+within objects starting at 1.</p>
+
+<pre><code class="language-python"># Create a list of numbers:
+a = [1, 2, 3, 4, 5]
+</code></pre>
+
+<p><img src="../images/slicing-indexing.svg" alt="indexing diagram" />
+<img src="../images/slicing-slicing.svg" alt="slicing diagram" /></p>
+
+<h2 id="challenge-extracting-data">Challenge - Extracting data</h2>
+
+<ol>
+<li><p>What value does the code <strong>a[0]</strong> return?</p></li>
+
+<li><p>How about this: <strong>a[5]</strong></p></li>
+
+<li><p>In the example above, calling <code>a[5]</code> returns an error. Why is that?</p></li>
+
+<li><p>What about <strong>a[len(a)]</strong> ?</p></li>
+</ol>
+
+<h2 id="slicing-subsets-of-rows-in-python">Slicing Subsets of Rows in Python</h2>
+
+<p>Slicing using the <code>[]</code> operator selects a set of rows and/or columns from a
+DataFrame. To slice out a set of rows, you use the following syntax:
+<code>data[start:stop]</code>. When slicing in pandas the start bound is included in the
+output. The stop bound is one step BEYOND the row you want to select. So if you
+want to select rows 0, 1 and 2 your code would look like this:</p>
+
+<pre><code class="language-python"># Select rows 0, 1, 2 (row 3 is not selected)
+surveys_df[0:3]
+</code></pre>
+
+<p>The stop bound in Python is different from what you might be used to in
+languages like Matlab and R.</p>
+
+<pre><code class="language-python"># Select the first 5 rows (rows 0, 1, 2, 3, 4)
+surveys_df[:5]
+
+# Select the last element in the list
+# (the slice starts at the last element, and ends at the end of the list)
+surveys_df[-1:]
+</code></pre>
+
+<p>We can also reassign values within subsets of our DataFrame.</p>
+
+<p>Let&rsquo;s create a brand new clean dataframe from
+the original data CSV file.</p>
+
+<pre><code class="language-python">surveys_df = pd.read_csv(&quot;data/surveys.csv&quot;)
+</code></pre>
+
+<h2 id="slicing-subsets-of-rows-and-columns-in-python">Slicing Subsets of Rows and Columns in Python</h2>
+
+<p>We can select specific ranges of our data in both the row and column directions
+using either label or integer-based indexing.</p>
+
+<ul>
+<li><code>loc</code> is primarily <em>label</em> based indexing. <em>Integers</em> may be used but
+they are interpreted as a <em>label</em>.</li>
+<li><code>iloc</code> is primarily <em>integer</em> based indexing</li>
+</ul>
+
+<p>To select a subset of rows <strong>and</strong> columns from our DataFrame, we can use the
+<code>iloc</code> method. For example, we can select month, day and year (columns 2, 3
+and 4 if we start counting at 1), like this:</p>
+
+<pre><code class="language-python"># iloc[row slicing, column slicing]
+surveys_df.iloc[0:3, 1:4]
+</code></pre>
+
+<p>which gives the <strong>output</strong></p>
+
+<pre><code>   month  day  year
+0      7   16  1977
+1      7   16  1977
+2      7   16  1977
+</code></pre>
+
+<p>Notice that we asked for a slice from 0:3. This yielded 3 rows of data. When you
+ask for 0:3, you are actually telling Python to start at index 0 and select rows
+0, 1, 2 <strong>up to but not including 3</strong>.</p>
+
+<p>Let&rsquo;s explore some other ways to index and select subsets of data:</p>
+
+<pre><code class="language-python"># Select all columns for rows of index values 0 and 10
+surveys_df.loc[[0, 10], :]
+
+# What does this do?
+surveys_df.loc[0, ['species_id', 'plot_id', 'weight']]
+
+# What happens when you type the code below?
+surveys_df.loc[[0, 10, 35549], :]
+</code></pre>
+
+<p><strong>NOTE</strong>: Labels must be found in the DataFrame or you will get a <code>KeyError</code>.</p>
+
+<p>Indexing by labels <code>loc</code> differs from indexing by integers <code>iloc</code>.
+With <code>loc</code>, the both start bound and the stop bound are <strong>inclusive</strong>. When using
+<code>loc</code>, integers <em>can</em> be used, but the integers refer to the
+index label and not the position. For example, using <code>loc</code> and select 1:4
+will get a different result than using <code>iloc</code> to select rows 1:4.</p>
+
+<p>We can also select a specific data value using a row and
+column location within the DataFrame and <code>iloc</code> indexing:</p>
+
+<pre><code class="language-python"># Syntax for iloc indexing to finding a specific data element
+dat.iloc[row, column]
+</code></pre>
+
+<p>In this <code>iloc</code> example,</p>
+
+<pre><code class="language-python">surveys_df.iloc[2, 6]
+</code></pre>
+
+<p>gives the <strong>output</strong></p>
+
+<pre><code>'F'
+</code></pre>
+
+<p>Remember that Python indexing begins at 0. So, the index location [2, 6]
+selects the element that is 3 rows down and 7 columns over in the DataFrame.</p>
+
+<h2 id="challenge-range">Challenge - Range</h2>
+
+<ol>
+<li><p>What happens when you execute:</p>
+
+<ul>
+<li><code>surveys_df[0:1]</code></li>
+<li><code>surveys_df[:4]</code></li>
+<li><code>surveys_df[:-1]</code></li>
+</ul></li>
+
+<li><p>What happens when you call:</p>
+
+<ul>
+<li><code>surveys_df.iloc[0:4, 1:4]</code></li>
+</ul></li>
+</ol>
+
+<h2 id="subsetting-data-using-criteria">Subsetting Data using Criteria</h2>
+
+<p>We can also select a subset of our data using criteria. For example, we can
+select all rows that have a year value of 2002:</p>
+
+<pre><code class="language-python">surveys_df[surveys_df.year == 2002].head()
+</code></pre>
+
+<p>Which produces the following output:</p>
+
+<pre><code class="language-python">record_id  month  day  year  plot_id species_id  sex  hindfoot_length  weight
+33320      33321      1   12  2002        1         DM    M     38      44
+33321      33322      1   12  2002        1         DO    M     37      58
+33322      33323      1   12  2002        1         PB    M     28      45
+33323      33324      1   12  2002        1         AB  NaN    NaN     NaN
+33324      33325      1   12  2002        1         DO    M     35      29
+...
+35544      35545     12   31  2002       15         AH  NaN    NaN     NaN
+35545      35546     12   31  2002       15         AH  NaN    NaN     NaN
+35546      35547     12   31  2002       10         RM    F     15      14
+35547      35548     12   31  2002        7         DO    M     36      51
+35548      35549     12   31  2002        5        NaN  NaN    NaN     NaN
+
+[2229 rows x 9 columns]
+</code></pre>
+
+<p>Or we can select all rows that do not contain the year 2002:</p>
+
+<pre><code class="language-python">surveys_df[surveys_df.year != 2002]
+</code></pre>
+
+<p>We can define sets of criteria too:</p>
+
+<pre><code class="language-python">surveys_df[(surveys_df.year &gt;= 1980) &amp; (surveys_df.year &lt;= 1985)]
+</code></pre>
+
+<h3 id="python-syntax-cheat-sheet">Python Syntax Cheat Sheet</h3>
+
+<p>Use can use the syntax below when querying data by criteria from a DataFrame.
+Experiment with selecting various subsets of the &ldquo;surveys&rdquo; data.</p>
+
+<ul>
+<li>Equals: <code>==</code></li>
+<li>Not equals: <code>!=</code></li>
+<li>Greater than, less than: <code>&gt;</code> or <code>&lt;</code></li>
+<li>Greater than or equal to <code>&gt;=</code></li>
+<li>Less than or equal to <code>&lt;=</code></li>
+</ul>
+
+<h2 id="challenge-queries">Challenge - Queries</h2>
+
+<ol>
+<li><p>Select a subset of rows in the <code>surveys_df</code> DataFrame that contain data from
+the year 1999 and that contain weight values less than or equal to 8. How
+many rows did you end up with? What did your neighbor get?</p></li>
+
+<li><p><strong>(Extra)</strong> You can use the <code>isin</code> command in Python to query a DataFrame based upon a
+list of values as follows:</p></li>
+</ol>
+
+<pre><code class="language-python">    surveys_df[surveys_df['species_id'].isin([listGoesHere])]
+</code></pre>
+
+<p>Use the <code>isin</code> function to find all plots that contain particular species
+in the &ldquo;surveys&rdquo; DataFrame. How many records contain these values?</p>
+
+<ol>
+<li><p><strong>(Extra)</strong> Experiment with other queries. Create a query that finds all rows with a
+weight value &gt; or equal to 0.</p></li>
+
+<li><p><strong>(Extra)</strong> The <code>~</code> symbol in Python can be used to return the OPPOSITE of the
+selection that you specify in Python. It is equivalent to <strong>is not in</strong>.
+Write a query that selects all rows with sex NOT equal to &rsquo;M&rsquo; or &lsquo;F&rsquo; in
+the &ldquo;surveys&rdquo; data.</p></li>
+</ol>
+
+<h1 id="using-masks-to-identify-a-specific-condition">Using masks to identify a specific condition</h1>
+
+<p>A <strong>mask</strong> can be useful to locate where a particular subset of values exist or
+don&rsquo;t exist - for example,  NaN, or &ldquo;Not a Number&rdquo; values. To understand masks,
+we also need to understand <code>BOOLEAN</code> objects in Python.</p>
+
+<p>Boolean values include <code>True</code> or <code>False</code>. For example,</p>
+
+<pre><code class="language-python"># Set x to 5
+x = 5
+
+# What does the code below return?
+x &gt; 5
+
+# How about this?
+x == 5
+</code></pre>
+
+<h2 id="missing-values">Missing Values</h2>
+
+<p>Let&rsquo;s try this out. Let&rsquo;s identify all locations in the survey data that have
+null (missing or NaN) data values. We can use the <code>isnull</code> method to do this.
+The <code>isnull</code> method will compare each cell with a null value. If an element
+has a null value, it will be assigned a value of  <code>True</code> in the output object.</p>
+
+<pre><code class="language-python">pd.isnull(surveys_df).head()
+</code></pre>
+
+<p>A snippet of the output is below:</p>
+
+<pre><code class="language-python">      record_id  month    day   year plot_id species_id    sex  hindfoot_length weight
+0         False  False  False  False   False      False  False   False      True
+1         False  False  False  False   False      False  False   False      True
+2         False  False  False  False   False      False  False   False      True
+3         False  False  False  False   False      False  False   False      True
+4         False  False  False  False   False      False  False   False      True
+
+[35549 rows x 9 columns]
+</code></pre>
+
+<p>To select the rows where there are null values, we can use
+the mask as an index to subset our data as follows:</p>
+
+<pre><code class="language-python"># To select just the rows with NaN values, we can use the 'any()' method
+surveys_df[pd.isnull(surveys_df).any(axis=1)]
+</code></pre>
+
+<p><strong>(axis=1)</strong> is a numpy convention to specify columns.</p>
+
+<p>Note that the <code>weight</code> column of our DataFrame contains many <code>null</code> or <code>NaN</code>
+values. Next, we will explore ways of dealing with this.</p>
+
+<p>If we look at the <code>weight</code> column in the surveys
+data we notice that there are NaN (<strong>N</strong>ot <strong>a</strong> <strong>N</strong>umber) values. <em>NaN</em> values are undefined
+values that cannot be represented mathematically. Pandas, for example, will read
+an empty cell in a CSV or Excel sheet as a NaN. NaNs have some desirable properties: if we
+were to average the <code>weight</code> column without replacing our NaNs, Python would know to skip
+over those cells.</p>
+
+<pre><code class="language-python">surveys_df['weight'].mean()
+42.672428212991356
+</code></pre>
+
+<p>Dealing with missing data values is always a challenge. It&rsquo;s sometimes hard to
+know why values are missing - was it because of a data entry error? Or data that
+someone was unable to collect? Should the value be 0? We need to know how
+missing values are represented in the dataset in order to make good decisions.
+If we&rsquo;re lucky, we have some metadata that will tell us more about how null
+values were handled.</p>
+
+<p>For instance, in some disciplines, like Remote Sensing, missing data values are
+often defined as -9999. Having a bunch of -9999 values in your data could really
+alter numeric calculations. Often in spreadsheets, cells are left empty where no
+data are available. Pandas will, by default, replace those missing values with
+NaN. However it is good practice to get in the habit of intentionally marking
+cells that have no data, with a no data value! That way there are no questions
+in the future when you (or someone else) explores your data.</p>
+
+<h3 id="where-are-the-nan-s">Where Are the NaN&rsquo;s?</h3>
+
+<p>Let&rsquo;s explore the NaN values in our data a bit further. Using the tools we
+learned in lesson 02, we can figure out how many rows contain NaN values for
+weight. We can also create a new subset from our data that only contains rows
+with weight values &gt; 0 (i.e., select meaningful weight values):</p>
+
+<pre><code class="language-python">len(surveys_df[pd.isnull(surveys_df.weight)])
+# How many rows have weight values?
+len(surveys_df[surveys_df.weight&gt; 0])
+</code></pre>
+
+<p>We can replace all NaN values with zeroes using the <code>.fillna()</code> method (after
+making a copy of the data so we don&rsquo;t lose our work):</p>
+
+<pre><code class="language-python"># Creat a new DataFrame using copy
+df1 = surveys_df.copy()
+
+# Fill all NaN values with 0
+df1['weight'] = df1['weight'].fillna(0)
+</code></pre>
+
+<p>However NaN and 0 yield different analysis results. The mean value when NaN
+values are replaced with 0 is different from when NaN values are simply thrown
+out or ignored.</p>
+
+<pre><code class="language-python">df1['weight'].mean()
+38.751976145601844
+</code></pre>
+
+<h3 id="extra-information"><em>Extra Information</em></h3>
+
+<p>We can fill NaN values with any value that we chose. The code below fills all
+NaN values with a mean for all weight values.</p>
+
+<pre><code class="language-python"> df1['weight'] = surveys_df['weight'].fillna(surveys_df['weight'].mean())
+</code></pre>
+
+<h2 id="writing-out-data-to-csv">Writing Out Data to CSV</h2>
+
+<p>We&rsquo;ve learned about using manipulating data to get desired outputs. But we&rsquo;ve also discussed
+keeping data that has been manipulated separate from our raw data. Something we might be interested
+in doing is working with only the columns that have full data. First, let&rsquo;s reload the data so
+we&rsquo;re not mixing up all of our previous manipulations.</p>
+
+<pre><code class="language-python">surveys_df = pd.read_csv(&quot;data/surveys.csv&quot;)
+</code></pre>
+
+<p>Next, let&rsquo;s drop all the rows that contain missing values. We will use the command <code>dropna</code>.
+By default, dropna removes columns that contain missing data for even just one row.</p>
+
+<pre><code class="language-python">df_na = df.dropna()
+
+</code></pre>
+
+<p>If you now type <code>df_na</code>, you should observe that the resulting DataFrame has 30676 rows
+and 9 columns, much smaller than the 35549 row original.</p>
+
+<p>We can now use the <code>to_csv</code> command to do export a DataFrame in CSV format. Note that the code
+below will by default save the data into the current working directory. We can
+save it to a different folder by adding the foldername and a slash before the filename:
+<code>df1.to_csv('foldername/out.csv')</code>. We use &lsquo;index=False&rsquo; so that
+pandas doesn&rsquo;t include the index number for each line.</p>
+
+<pre><code class="language-python"># Write DataFrame to CSV
+df_na.to_csv('data_output/surveys_complete.csv', index=False)
+</code></pre>
+
+<h2 id="recap">Recap</h2>
+
+<p>What we&rsquo;ve learned:</p>
+
+<ul>
+<li>How to subset and index the dataframe</li>
+<li>What NaN values are, how they might be represented, and what this means for your work</li>
+<li>How to replace NaN values, if desired</li>
+<li>How to use <code>to_csv</code> to write manipulated data to a file.</li>
+</ul>
+
+<h2 id="extra"><em>Extra</em></h2>
+
+<p>We can run <code>isnull</code> on a particular column too. What does the code below do?</p>
+
+<pre><code class="language-python"># What does this do?
+empty_weights = surveys_df[pd.isnull(surveys_df['weight'])]['weight']
+print(empty_weights)
+</code></pre>
+
+<p>Let&rsquo;s take a minute to look at the statement above. We are using the Boolean
+object <code>pd.isnull(surveys_df['weight'])</code> as an index to <code>surveys_df</code>. We are
+asking Python to select rows that have a <code>NaN</code> value of weight.</p>
+
+<h2 id="extra-challenges-putting-it-all-together"><em>Extra Challenges - Putting it all together</em></h2>
+
+<ol>
+<li><p>Create a new DataFrame that only contains observations with sex values that
+are <strong>not</strong> female or male. Assign each sex value in the new DataFrame to a
+new value of &lsquo;x&rsquo;. Determine the number of null values in the subset.</p></li>
+
+<li><p>Create a new DataFrame that contains only observations that are of sex male
+or female and where weight values are greater than 0. Create a stacked bar
+plot of average weight by plot with male vs female values stacked for each
+plot.</p>
+
+<ol>
+<li>Count the number of missing values per column. Hint: The method .count() gives you the number of non-NA observations per column.</li>
+</ol></li>
+</ol>
+
+<h2 id="next-loops"><a href="../loops/">NEXT</a></h2>
+
+      </div>
+    </article>
+    
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://MonashDataFluency.github.io/" >
+    &copy; 2018 Monash Data Fluency
+  </a>
+  
+
+
+
+  <a href="https://twitter.com/ResDatFlu" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+
+  <a href="https://github.com/MonashDataFluency" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+  </a>
+
+
+  <a href="https://datafluency.slack.com" class="link-transition slack link dib z-999 pt3 pt0-l mr2" title="Slack link">
+    <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xml:space="preserve"
+    height="32px"  width="32px"
+   viewBox="0 0 512 512"
+   version="1.1"
+   style="enable-background:new 0 0 512 512;">
+
+    <style
+    id="style4"
+    type="text/css">
+    .st0{fill:#BABABA;}
+    </style>
+    <g transform="matrix(4.0005037,0,0,4.0005037,-291.56238,-286.76158)">
+    <g>
+        <rect
+                height="17"
+                width="17.6"
+                class="st0"
+                transform="matrix(0.9482,-0.3176,0.3176,0.9482,-36.0197,50.6366)"
+                y="127.3"
+                x="128.5"/>
+        <path
+                class="st0"
+                d="m 194.6,118.5 c -12.9,-43 -31.5,-53 -74.5,-40.1 -43,12.9 -53,31.5 -40.1,74.5 12.9,43 31.5,53 74.5,40.1 43,-12.9 53,-31.5 40.1,-74.5 z m -21.7,27.9 -8.1,2.7 2.8,8.4 c 1.1,3.4 -0.7,7.1 -4.1,8.2 -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 l -2.8,-8.4 -16.7,5.6 2.8,8.4 c 1.1,3.4 -0.7,7.1 -4.1,8.2 -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 l -2.8,-8.4 -8.1,2.7 c -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 -1.1,-3.4 0.7,-7.1 4.1,-8.2 l 8.1,-2.7 -5.4,-16.1 -8.1,2.7 c -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 -1.1,-3.4 0.7,-7.1 4.1,-8.2 l 8.1,-2.7 -2.8,-8.4 c -1.1,-3.4 0.7,-7.1 4.1,-8.2 3.4,-1.1 7.1,0.7 8.2,4.1 l 2.8,8.4 16.7,-5.6 -2.8,-8.4 c -1.1,-3.4 0.7,-7.1 4.1,-8.2 3.4,-1.1 7.1,0.7 8.2,4.1 l 2.8,8.4 8.1,-2.7 c 3.4,-1.1 7.1,0.7 8.2,4.1 1.1,3.4 -0.7,7.1 -4.1,8.2 l -8.1,2.7 5.4,16.1 8.1,-2.7 c 3.4,-1.1 7.1,0.7 8.2,4.1 1.1,3.4 -0.7,7.1 -4.1,8.2 z"
+        />
+    </g>
+    </g>
+</svg>
+
+  </a>
+
+
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

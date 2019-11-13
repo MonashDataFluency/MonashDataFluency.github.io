@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cleaning Data with OpenRefine - April 2019 on Monash Data Fluency</title>
+    <link>https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20190417/</link>
+    <description>Recent content in Cleaning Data with OpenRefine - April 2019 on Monash Data Fluency</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Content released under a Creative Commons Attribution 4.0 International license (CC BY 4.0).</copyright>
+    <lastBuildDate>Thu, 15 Nov 2018 13:28:03 +1100</lastBuildDate>
+    
+	<atom:link href="https://MonashDataFluency.github.io/workshops/cleaning_data_with_openrefine/20190417/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

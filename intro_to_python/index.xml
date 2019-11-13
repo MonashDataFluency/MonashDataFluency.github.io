@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Monash Data Fluency</title>
+    <link>https://MonashDataFluency.github.io/intro_to_python/</link>
+    <description>Recent content in Python on Monash Data Fluency</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Content released under a Creative Commons Attribution 4.0 International license (CC BY 4.0).</copyright>
+    <lastBuildDate>Fri, 23 Feb 2018 13:28:03 +1100</lastBuildDate>
+    
+	<atom:link href="https://MonashDataFluency.github.io/intro_to_python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>01 Programming in Python (Introduction)</title>
+      <link>https://MonashDataFluency.github.io/intro_to_python/intro/</link>
+      <pubDate>Fri, 23 Feb 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/intro_to_python/intro/</guid>
+      <description>The Basics of Python Python is a general purpose programming language that supports rapid development of scripts and applications.
+Python&amp;rsquo;s main advantages:
+ Open Source software, supported by Python Software Foundation Available on all platforms (ie. Windows, Linux and MacOS) It is a general-purpose programming language Supports multiple programming paradigms Very large community with a rich ecosystem of third-party packages  Interpreter Python is an interpreted language which can be used in two ways:</description>
+    </item>
+    
+    <item>
+      <title>02 Data Analysis in Python</title>
+      <link>https://MonashDataFluency.github.io/intro_to_python/working_with_data/</link>
+      <pubDate>Fri, 23 Feb 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/intro_to_python/working_with_data/</guid>
+      <description>Working With Pandas DataFrames We can automate the process of performing data manipulations in Python. It&amp;rsquo;s efficient to spend time building the code to perform these tasks because once it&amp;rsquo;s built, we can use it over and over on different datasets that use a similar format. This makes our methods easily reproducible. We can also easily share our code with colleagues and they can replicate the same analysis.
+The Dataset For this lesson, we will be using the Portal Teaching data, a subset of the data from Ernst et al Long-term monitoring and experimental manipulation of a Chihuahuan Desert ecosystem near Portal, Arizona, USA</description>
+    </item>
+    
+    <item>
+      <title>03 Indexing, Slicing and Subsetting</title>
+      <link>https://MonashDataFluency.github.io/intro_to_python/indexing/</link>
+      <pubDate>Fri, 23 Feb 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/intro_to_python/indexing/</guid>
+      <description>In lesson 02, we read a CSV into a Python pandas DataFrame. We learned:
+ How to save the DataFrame to a named object, How to perform basic math on the data, How to calculate summary statistics, and How to create basic plots of the data.  In this lesson, we will explore ways to access different parts of the data using:
+ Indexing, Slicing, and Subsetting  Loading our data We will continue to use the surveys dataset that we worked with in the last lesson.</description>
+    </item>
+    
+    <item>
+      <title>04 Automation with Loops</title>
+      <link>https://MonashDataFluency.github.io/intro_to_python/loops/</link>
+      <pubDate>Fri, 23 Feb 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/intro_to_python/loops/</guid>
+      <description>An example task that we might want to repeat is printing each character in a word on a line of its own.
+word = &#39;lead&#39;  We can access a character in a string using its index. For example, we can get the first character of the word &#39;lead&#39;, by using word[0]. One way to print each character is to use four print statements:
+print(word[0]) print(word[1]) print(word[2]) print(word[3])  Gives output</description>
+    </item>
+    
+    <item>
+      <title>05 Making Plots With ggplot</title>
+      <link>https://MonashDataFluency.github.io/intro_to_python/plotting/</link>
+      <pubDate>Fri, 23 Feb 2018 13:28:03 +1100</pubDate>
+      
+      <guid>https://MonashDataFluency.github.io/intro_to_python/plotting/</guid>
+      <description>Introduction Python has powerful built-in plotting capabilities such as matplotlib, but with great power comes great complexity. For this exercise, we are going to use different python library, plotnine. There are a number of different libraries to choose from, but we are setting on plotnine as this is python port of original ggplot2 an R library (package), which is a very nice way to create publication quality plots and syntax is preserved, meaning you can take your python ggplot code and run it in R if you want it.</description>
+    </item>
+    
+  </channel>
+</rss>

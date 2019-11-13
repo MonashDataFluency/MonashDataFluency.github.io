@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Monash Data Fluency  | 01 Programming in Python (Introduction)</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.41" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+          integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+          crossorigin="anonymous">
+
+    <link href='https://MonashDataFluency.github.io/dist/main.css' rel='stylesheet' type="text/css" />
+    <link href='/css/custom.css' rel='stylesheet' type="text/css" />
+    
+      
+
+    
+
+    
+
+    <meta property="og:title" content="01 Programming in Python (Introduction)" />
+<meta property="og:description" content="The Basics of Python Python is a general purpose programming language that supports rapid development of scripts and applications.
+Python&rsquo;s main advantages:
+ Open Source software, supported by Python Software Foundation Available on all platforms (ie. Windows, Linux and MacOS) It is a general-purpose programming language Supports multiple programming paradigms Very large community with a rich ecosystem of third-party packages  Interpreter Python is an interpreted language which can be used in two ways:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://MonashDataFluency.github.io/workshops/intro_to_python/20180323-launch-workshop/intro/" />
+
+
+
+<meta property="article:published_time" content="2018-02-23T13:28:03&#43;11:00"/>
+
+<meta property="article:modified_time" content="2018-02-23T13:28:03&#43;11:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="01 Programming in Python (Introduction)">
+<meta itemprop="description" content="The Basics of Python Python is a general purpose programming language that supports rapid development of scripts and applications.
+Python&rsquo;s main advantages:
+ Open Source software, supported by Python Software Foundation Available on all platforms (ie. Windows, Linux and MacOS) It is a general-purpose programming language Supports multiple programming paradigms Very large community with a rich ecosystem of third-party packages  Interpreter Python is an interpreted language which can be used in two ways:">
+
+
+<meta itemprop="datePublished" content="2018-02-23T13:28:03&#43;11:00" />
+<meta itemprop="dateModified" content="2018-02-23T13:28:03&#43;11:00" />
+<meta itemprop="wordCount" content="1207">
+
+
+
+<meta itemprop="keywords" content="no_sidebar," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="01 Programming in Python (Introduction)"/>
+<meta name="twitter:description" content="The Basics of Python Python is a general purpose programming language that supports rapid development of scripts and applications.
+Python&rsquo;s main advantages:
+ Open Source software, supported by Python Software Foundation Available on all platforms (ie. Windows, Linux and MacOS) It is a general-purpose programming language Supports multiple programming paradigms Very large community with a rich ecosystem of third-party packages  Interpreter Python is an interpreted language which can be used in two ways:"/>
+
+      
+    
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+    <div class="flex-l justify-between items-center center">
+        
+        
+        
+        <div class="f3 fw2 hover-white no-underline white-90 dib"></div>
+        <div class="flex-l items-center">
+            
+            
+            
+            
+            <ul class="pl0 mr3">
+                
+                
+                
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/" title="Home page">
+                        Home
+                    </a>
+                </li>
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/events" title="Events page">
+                        Events
+                    </a>
+                </li>
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/resources" title="Resources page">
+                        Resources
+                    </a>
+                </li>
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/contact" title="Contact page">
+                        Contact
+                    </a>
+                </li>
+                
+                
+                
+                <li class="list f5 f4-ns fw4 dib pr3">
+                    <a class="hover-white no-underline white-90" href="/about" title="About page">
+                        About
+                    </a>
+                </li>
+                
+                
+            </ul>
+            
+            
+
+
+
+  <a href="https://twitter.com/ResDatFlu" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+
+  <a href="https://github.com/MonashDataFluency" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+  </a>
+
+
+  <a href="https://datafluency.slack.com" class="link-transition slack link dib z-999 pt3 pt0-l mr2" title="Slack link">
+    <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xml:space="preserve"
+    height="32px"  width="32px"
+   viewBox="0 0 512 512"
+   version="1.1"
+   style="enable-background:new 0 0 512 512;">
+
+    <style
+    id="style4"
+    type="text/css">
+    .st0{fill:#BABABA;}
+    </style>
+    <g transform="matrix(4.0005037,0,0,4.0005037,-291.56238,-286.76158)">
+    <g>
+        <rect
+                height="17"
+                width="17.6"
+                class="st0"
+                transform="matrix(0.9482,-0.3176,0.3176,0.9482,-36.0197,50.6366)"
+                y="127.3"
+                x="128.5"/>
+        <path
+                class="st0"
+                d="m 194.6,118.5 c -12.9,-43 -31.5,-53 -74.5,-40.1 -43,12.9 -53,31.5 -40.1,74.5 12.9,43 31.5,53 74.5,40.1 43,-12.9 53,-31.5 40.1,-74.5 z m -21.7,27.9 -8.1,2.7 2.8,8.4 c 1.1,3.4 -0.7,7.1 -4.1,8.2 -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 l -2.8,-8.4 -16.7,5.6 2.8,8.4 c 1.1,3.4 -0.7,7.1 -4.1,8.2 -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 l -2.8,-8.4 -8.1,2.7 c -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 -1.1,-3.4 0.7,-7.1 4.1,-8.2 l 8.1,-2.7 -5.4,-16.1 -8.1,2.7 c -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 -1.1,-3.4 0.7,-7.1 4.1,-8.2 l 8.1,-2.7 -2.8,-8.4 c -1.1,-3.4 0.7,-7.1 4.1,-8.2 3.4,-1.1 7.1,0.7 8.2,4.1 l 2.8,8.4 16.7,-5.6 -2.8,-8.4 c -1.1,-3.4 0.7,-7.1 4.1,-8.2 3.4,-1.1 7.1,0.7 8.2,4.1 l 2.8,8.4 8.1,-2.7 c 3.4,-1.1 7.1,0.7 8.2,4.1 1.1,3.4 -0.7,7.1 -4.1,8.2 l -8.1,2.7 5.4,16.1 8.1,-2.7 c 3.4,-1.1 7.1,0.7 8.2,4.1 1.1,3.4 -0.7,7.1 -4.1,8.2 z"
+        />
+    </g>
+    </g>
+</svg>
+
+  </a>
+
+
+        </div>
+    </div>
+</nav>
+
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <p class="f6 b helvetica tracked">
+          WORKSHOPS
+        </p>
+        <h1 class="f1">
+          01 Programming in Python (Introduction)
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        
+
+<h1 id="the-basics-of-python">The Basics of Python</h1>
+
+<p>Python is a general purpose programming language that supports rapid development
+of scripts and applications.</p>
+
+<p>Python&rsquo;s main advantages:</p>
+
+<ul>
+<li>Open Source software, supported by Python Software Foundation</li>
+<li>Available on all platforms (ie. Windows, Linux and MacOS)</li>
+<li>It is a general-purpose programming language</li>
+<li>Supports multiple programming paradigms</li>
+<li>Very large community with a rich ecosystem of third-party packages</li>
+</ul>
+
+<h2 id="interpreter">Interpreter</h2>
+
+<p>Python is an interpreted language which can be used in two ways:</p>
+
+<ul>
+<li>&ldquo;Interactive&rdquo; Mode: It functions like an &ldquo;advanced calculator&rdquo; Executing
+one command at a time:</li>
+</ul>
+
+<pre><code class="language-python">user:host:~$ python
+Python 3.5.1 (default, Oct 23 2015, 18:05:06)
+[GCC 4.8.3] on linux2
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; 2 + 2
+4
+&gt;&gt;&gt; print(&quot;Hello World&quot;)
+Hello World
+</code></pre>
+
+<ul>
+<li>&ldquo;Scripting&rdquo; Mode: Executing a series of &ldquo;commands&rdquo; saved in text file,
+usually with a <code>.py</code> extension after the name of your file:</li>
+</ul>
+
+<pre><code class="language-bash">user:host:~$ python my_script.py
+Hello World
+</code></pre>
+
+<h2 id="introduction-to-python-built-in-data-types">Introduction to Python built-in data types</h2>
+
+<h3 id="strings-integers-and-floats">Strings, integers and floats</h3>
+
+<p>One of the most basic things we can do in Python is assign values to variables:</p>
+
+<pre><code class="language-python">text = &quot;Data Fluency&quot;  # An example of a string
+number = 42  # An example of an integer
+pi_value = 3.1415  # An example of a float
+</code></pre>
+
+<p>Here we&rsquo;ve assigned data to the variables <code>text</code>, <code>number</code> and <code>pi_value</code>,
+using the assignment operator <code>=</code>. To review the value of a variable, we
+can type the name of the variable into the Jupyter notebook and press <strong>Shift</strong> and <strong>Enter</strong>:</p>
+
+<pre><code class="language-python">text
+## Which Returns
+&quot;Data Fluency&quot;
+</code></pre>
+
+<p>Everything in Python has a type. To get the type of something, we can pass it
+to the built-in function <code>type</code>:</p>
+
+<pre><code class="language-python">type(text)
+ str
+type(number)
+ int
+type(6.02)
+ float
+</code></pre>
+
+<p>The variable <code>text</code> is of type <code>str</code>, short for &ldquo;string&rdquo;. Strings hold
+sequences of characters, which can be letters, numbers, punctuation
+or more exotic forms of text (even emoji!).</p>
+
+<p>We can also see the value of something using another built-in function, <code>print</code>:</p>
+
+<pre><code class="language-python">
+print(text)
+Data Fluency
+
+print(11)
+11
+</code></pre>
+
+<p>This may seem redundant, but in fact it&rsquo;s the only way to display output in a script:</p>
+
+<p><em>example.py</em></p>
+
+<pre><code class="language-python"># A Python script file
+# Comments in Python start with #
+# The next line assigns the string &quot;Data Carpentry&quot; to the variable &quot;text&quot;.
+text = &quot;Data Fluency&quot;
+# The next line does nothing!
+text
+# The next line uses the print function to print out the value we assigned to &quot;text&quot;
+print(text)
+</code></pre>
+
+<p><em>Running the script</em></p>
+
+<pre><code class="language-bash">$ python example.py
+Data Fluency
+</code></pre>
+
+<p>Notice that &ldquo;Data Fluency&rdquo; is printed only once.</p>
+
+<p><strong>Tip</strong>: <code>print</code> and <code>type</code> are built-in functions in Python. Later in this
+lesson, we will introduce methods and user-defined functions. The Python
+documentation is excellent for reference on the differences between them.</p>
+
+<pre><code class="language-python">help(print)
+</code></pre>
+
+<p>Will give the output</p>
+
+<pre><code>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+</code></pre>
+
+<h3 id="operators">Operators</h3>
+
+<p>We can perform mathematical calculations in Python using the basic operators
+ <code>+, -, /, *, %</code>:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; 2 + 2  # Addition
+4
+&gt;&gt;&gt; 6 * 7  # Multiplication
+42
+&gt;&gt;&gt; 2 ** 16  # Power
+65536
+&gt;&gt;&gt; 13 % 5  # Modulo
+3
+</code></pre>
+
+<p>We can also use comparison and logic operators:
+<code>&lt;, &gt;, ==, !=, &lt;=, &gt;=</code> and statements of identity such as
+<code>and, or, not</code>. The data type returned by this is
+called a <em>boolean</em>.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; 3 &gt; 4
+False
+&gt;&gt;&gt; True and True
+True
+&gt;&gt;&gt; True or False
+True
+</code></pre>
+
+<h2 id="sequential-types-lists-and-tuples">Sequential types: Lists and Tuples</h2>
+
+<h3 id="lists">Lists</h3>
+
+<p><strong>Lists</strong> are a common data structure to hold an ordered sequence of
+elements. Each element can be accessed by an index.  Note that Python
+indexes start with 0 instead of 1:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; numbers = [1, 2, 3]
+&gt;&gt;&gt; numbers[0]
+1
+</code></pre>
+
+<p>A <code>for</code> loop can be used to access the elements in a list or other Python data structure one at a time. We will learn about loops in other lesson.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; for num in numbers:
+...     print(num)
+...
+1
+2
+3
+</code></pre>
+
+<p><strong>Indentation</strong> is very important in Python. Note that the second line in the
+example above is indented. Just like three chevrons <code>&gt;&gt;&gt;</code> indicate an
+interactive prompt in Python, the three dots <code>...</code> are Python&rsquo;s prompt for
+multiple lines. This is Python&rsquo;s way of marking a block of code. [Note: you
+do not type <code>&gt;&gt;&gt;</code> or <code>...</code>.]</p>
+
+<p>To add elements to the end of a list, we can use the <code>append</code> method. Methods
+are a way to interact with an object (a list, for example). We can invoke a
+method using the dot <code>.</code> followed by the method name and a list of arguments
+in parentheses. Let&rsquo;s look at an example using <code>append</code>:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; numbers.append(4)
+&gt;&gt;&gt; print(numbers)
+[1, 2, 3, 4]
+&gt;&gt;&gt;
+</code></pre>
+
+<p>To find out what methods are available for an
+object, we can use the built-in <code>help</code> command:</p>
+
+<pre><code class="language-python">help(numbers)
+
+Help on list object:
+
+class list(object)
+ |  list() -&gt; new empty list
+ |  list(iterable) -&gt; new list initialized from iterable's items
+ ...
+</code></pre>
+
+<h3 id="tuples">Tuples</h3>
+
+<p>A tuple is similar to a list in that it&rsquo;s an ordered sequence of elements.
+However, tuples can not be changed once created (they are &ldquo;immutable&rdquo;). Tuples
+are created by placing comma-separated values inside parentheses <code>()</code>.</p>
+
+<pre><code class="language-python"># Tuples use parentheses
+a_tuple= (1, 2, 3)
+another_tuple = ('blue', 'green', 'red')
+# Note: lists use square brackets
+a_list = [1, 2, 3]
+</code></pre>
+
+<h2 id="challenge-tuples">Challenge - Tuples</h2>
+
+<ol>
+<li>What happens when you type <code>a_tuple[2]=5</code> vs <code>a_list[1]=5</code> ?</li>
+<li>Type <code>type(a_tuple)</code> into python - what is the object type?</li>
+</ol>
+
+<h2 id="dictionaries">Dictionaries</h2>
+
+<p>A <strong>dictionary</strong> is a container that holds pairs of objects - keys and values.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; translation = {'one': 1, 'two': 2}
+&gt;&gt;&gt; translation['one']
+1
+</code></pre>
+
+<p>Dictionaries work a lot like lists - except that you index them with <em>keys</em>.
+You can think about a key as a name for or a unique identifier for a set of values
+in the dictionary. Keys can only have particular types - they have to be
+&ldquo;hashable&rdquo;. Strings and numeric types are acceptable, but lists aren&rsquo;t.</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; rev = {1: 'one', 2: 'two'}
+&gt;&gt;&gt; rev[1]
+'one'
+&gt;&gt;&gt; bad = {[1, 2, 3]: 3}
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+TypeError: unhashable type: 'list'
+</code></pre>
+
+<p>In Python, a &ldquo;Traceback&rdquo; is an multi-line error block printed out for the
+user.</p>
+
+<p>To add an item to the dictionary we assign a value to a new key:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; rev = {1: 'one', 2: 'two'}
+&gt;&gt;&gt; rev[3] = 'three'
+&gt;&gt;&gt; rev
+{1: 'one', 2: 'two', 3: 'three'}
+</code></pre>
+
+<h2 id="challenge-can-you-do-reassignment-in-a-dictionary">Challenge - Can you do reassignment in a dictionary?</h2>
+
+<ol>
+<li><p>First check what <code>rev</code> is right now (remember <code>rev</code> is the name of our dictionary).  Type: <strong>rev</strong></p></li>
+
+<li><p>Try to reassign the second value (in the <em>key value pair</em>) so that it no longer reads &ldquo;two&rdquo; but instead reads &ldquo;apple-sauce&rdquo;.</p></li>
+
+<li><p>Now display <code>rev</code> again to see if it has changed.</p></li>
+</ol>
+
+<p>It is important to note that dictionaries are &ldquo;unordered&rdquo; and do not remember
+the sequence of their items (i.e. the order in which key:value pairs were
+added to the dictionary). Because of this, the order in which items are
+returned from loops over dictionaries might appear random and can even change
+with time.</p>
+
+<h2 id="next-working-with-data"><a href="../working_with_data/">NEXT</a></h2>
+
+      </div>
+    </article>
+    
+  </div>
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://MonashDataFluency.github.io/" >
+    &copy; 2019 Monash Data Fluency
+  </a>
+  
+
+
+
+  <a href="https://twitter.com/ResDatFlu" class="link-transition twitter link dib z-999 pt3 pt0-l mr2" title="Twitter link">
+    <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+  </a>
+
+
+
+
+
+  <a href="https://github.com/MonashDataFluency" class="link-transition github link dib z-999 pt3 pt0-l mr2" title="Github link">
+    <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+  </a>
+
+
+  <a href="https://datafluency.slack.com" class="link-transition slack link dib z-999 pt3 pt0-l mr2" title="Slack link">
+    <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xml:space="preserve"
+    height="32px"  width="32px"
+   viewBox="0 0 512 512"
+   version="1.1"
+   style="enable-background:new 0 0 512 512;">
+
+    <style
+    id="style4"
+    type="text/css">
+    .st0{fill:#BABABA;}
+    </style>
+    <g transform="matrix(4.0005037,0,0,4.0005037,-291.56238,-286.76158)">
+    <g>
+        <rect
+                height="17"
+                width="17.6"
+                class="st0"
+                transform="matrix(0.9482,-0.3176,0.3176,0.9482,-36.0197,50.6366)"
+                y="127.3"
+                x="128.5"/>
+        <path
+                class="st0"
+                d="m 194.6,118.5 c -12.9,-43 -31.5,-53 -74.5,-40.1 -43,12.9 -53,31.5 -40.1,74.5 12.9,43 31.5,53 74.5,40.1 43,-12.9 53,-31.5 40.1,-74.5 z m -21.7,27.9 -8.1,2.7 2.8,8.4 c 1.1,3.4 -0.7,7.1 -4.1,8.2 -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 l -2.8,-8.4 -16.7,5.6 2.8,8.4 c 1.1,3.4 -0.7,7.1 -4.1,8.2 -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 l -2.8,-8.4 -8.1,2.7 c -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 -1.1,-3.4 0.7,-7.1 4.1,-8.2 l 8.1,-2.7 -5.4,-16.1 -8.1,2.7 c -0.7,0.2 -1.5,0.4 -2.2,0.3 -2.6,-0.1 -5.1,-1.8 -6,-4.4 -1.1,-3.4 0.7,-7.1 4.1,-8.2 l 8.1,-2.7 -2.8,-8.4 c -1.1,-3.4 0.7,-7.1 4.1,-8.2 3.4,-1.1 7.1,0.7 8.2,4.1 l 2.8,8.4 16.7,-5.6 -2.8,-8.4 c -1.1,-3.4 0.7,-7.1 4.1,-8.2 3.4,-1.1 7.1,0.7 8.2,4.1 l 2.8,8.4 8.1,-2.7 c 3.4,-1.1 7.1,0.7 8.2,4.1 1.1,3.4 -0.7,7.1 -4.1,8.2 l -8.1,2.7 5.4,16.1 8.1,-2.7 c 3.4,-1.1 7.1,0.7 8.2,4.1 1.1,3.4 -0.7,7.1 -4.1,8.2 z"
+        />
+    </g>
+    </g>
+</svg>
+
+  </a>
+
+
+  </div>
+</footer>
+
+    <script src="https://MonashDataFluency.github.io/dist/app.bundle.js" async></script>
+
+  </body>
+</html>
